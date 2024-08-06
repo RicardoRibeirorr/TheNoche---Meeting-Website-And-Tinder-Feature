@@ -9,7 +9,7 @@
 
 ## About Project
 
-This project is already set up with Authorization meaning(user login, register and also password reset), local storage to "storage" folder, bootstrap and font awesome.
+TheNoche is a unique meeting platform that seamlessly blends the best of traditional social networking with the excitement of modern dating. Whether you're looking to connect with like-minded professionals, expand your social circle, or explore romantic possibilities, TheNoche has it all. With a dedicated section inspired by the swipe-based experience of Tinder, you can easily discover and engage with new people who share your interests. Join TheNoche today and make meaningful connections, whether for business, friendship, or love, all in one dynamic platform.
 
 ## Install
 1. Download or clone the project.

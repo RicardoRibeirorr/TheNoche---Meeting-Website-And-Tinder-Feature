@@ -1,4 +1,5 @@
 <p align="center"><img src="storage/app/public/default/application_image.png"></p>
+<p align="center"><img src="storage/app/public/default/some_pages.png"></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>

@@ -1,35 +1,29 @@
 {
     "private": true,
     "scripts": {
-        "dev": "npm run development",
-        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch": "npm run development -- --watch",
-        "watch-poll": "npm run watch -- --watch-poll",
-        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "prod": "npm run production",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+        "dev": "vite",
+        "build": "vite build"
     },
     "devDependencies": {
-        "axios": "^0.18",
-        "bootstrap": "^4.3.1",
-        "cross-env": "^5.2.1",
-        "jquery": "^3.2",
-        "laravel-mix": "^4.1.4",
-        "lodash": "^4.17.15",
-        "popper.js": "^1.12",
-        "resolve-url-loader": "^2.3.1",
-        "sass": "^1.22.12",
-        "sass-loader": "^7.3.1",
-        "vue": "^2.5.17",
-        "vue-template-compiler": "^2.6.10"
+        "@popperjs/core": "^2.11.6",
+        "@vitejs/plugin-vue": "^4.0.0",
+        "axios": "^1.1.2",
+        "bootstrap": "^5.3.3",
+        "jquery": "^3.6.3",
+        "laravel-vite-plugin": "^0.7.2",
+        "lodash": "^4.17.21",
+        "mdb-ui-kit": "^6.1.0",
+        "resolve-url-loader": "^5.0.0",
+        "sass": "^1.56.1",
+        "vite": "^4.0.0",
+        "vue": "^3.2.37"
     },
     "dependencies": {
-        "@babel/polyfill": "^7.6.0",
-        "@fortawesome/fontawesome-free": "^5.10.2",
-        "autolinker": "^3.11.0",
-        "laravel-echo": "^1.5.4",
+        "@babel/polyfill": "^7.12.1",
+        "@fortawesome/fontawesome-free": "^6.6.0",
+        "laravel-echo": "^1.16.1",
         "msgdown": "^1.0.2",
-        "pusher-js": "^5.0.1",
-        "vue-beautiful-chat": "^2.3.1"
+        "pusher-js": "^8.4.0-rc2",
+        "vue-beautiful-chat": "^2.5.0"
     }
 }

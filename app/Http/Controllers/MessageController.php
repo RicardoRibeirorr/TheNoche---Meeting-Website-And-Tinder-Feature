@@ -8,7 +8,7 @@ use App\Post;
 use App\Thread;
 use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Request as Input;
 
 class MessageController extends Controller
 {
@@ -21,7 +21,7 @@ class MessageController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
 
     public function index($thread_id)
     {
@@ -45,7 +45,7 @@ class MessageController extends Controller
         // Validate data
         $data = $this->validateRequest();
         $data["user_id"] = auth()->user()->id;
-        
+
         // Get thread or create one, and set new properties
         $thread = $this->thread($data);
         $this->updateThread($thread);
@@ -57,7 +57,7 @@ class MessageController extends Controller
         $threadFormated = $thread->formated();
         $threadFormated["lastMessage"]=$message;
         // $this->broadcast($threadFormated);
-        
+
         $threadFormated["lastMessage"]["author"]["name"]="me";
         return [
             "thread"=>$threadFormated,
@@ -112,11 +112,11 @@ class MessageController extends Controller
         }else{
             return abort(401);
         }
-        
+
         // update thread(set here to update every thread also the thread sent to him self)
         return $thread;
     }
-    
+
     // update thread
     protected function updateThread($thread){
         if($thread->participant_id == auth()->user()->id){

@@ -6,7 +6,7 @@ use App\Stats;
 use App\User;
 use Cmgmyr\Messenger\Models\Thread;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Request as Input;
 
 class ExploreController extends Controller
 {
@@ -19,7 +19,7 @@ class ExploreController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     // private function getList(){
     //     $q = $this->inputRequest();
     //     $queryWhere = ;

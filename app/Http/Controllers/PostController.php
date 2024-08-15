@@ -8,7 +8,7 @@ use App\Location;
 use App\Post;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Request as Input;
 
 class PostController extends Controller {
     /**
@@ -45,7 +45,7 @@ class PostController extends Controller {
                 }
         }
         $posts = Post::where($queryWhere)->orWhere($queryOrWhere)->whereDate('expire_at', '>', Carbon::today()->toDateString());
-        
+
         $posts = $posts->with(["location:id,name", "user:id,image"])->orderBy("created_at", "DESC")->simplePaginate(6);
         if ($posts->count() < 6) {
             $others = Post::where($betaQuery)->whereNotIn("id",$posts->pluck("id"))->with(["location:id,name", "user:id,image"])->whereDate('expire_at', '>', Carbon::today()->toDateString())->orderBy("location_id", "DESC")->simplePaginate(6);

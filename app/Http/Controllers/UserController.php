@@ -8,7 +8,7 @@ use App\Thread;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Request as Input;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
@@ -88,7 +88,7 @@ class UserController extends Controller
      */
     public function update(User $user)
     {
-        $this->authorize("update",$user);      
+        $this->authorize("update",$user);
         $data = request()->validate([
             "name"=>"required|string",
             "gender"=>"nullable|numeric",
@@ -151,7 +151,7 @@ class UserController extends Controller
             $imageArray ?? []
         ));
         auth()->user()->seeking()->update($this->SeekingRequest($data));
-        return redirect("/profile/".$user->id); 
+        return redirect("/profile/".$user->id);
     }
 
     private function SeekingRequest($data){

@@ -6,7 +6,7 @@ use App\Post;
 use App\Thread;
 use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Request as Input;
 
 class ThreadController extends Controller
 {
@@ -20,7 +20,7 @@ class ThreadController extends Controller
         $this->middleware('auth');
     }
 
-    
+
     public function getLast(){
         return Thread::where("user_id",auth()->user()->id)->orWhere("participant_id",auth()->user()->id)->latest()->first()->formated();
         // return Thread::latest()->first()->formated();

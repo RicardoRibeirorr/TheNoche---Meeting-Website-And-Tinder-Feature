@@ -46,9 +46,9 @@
                             {{__("post.types.post")}}
                             @endif </b>
                     {{-- {{dd($Carbon->setTimeFrom($post->expire_at))}} --}}
-                    | {{__("post.posted_at")}} {{$post->created_at->diffForHumans()}} | @if($post->expire_at>$date_now)
+                    | {{__("post.posted_at")}} {{\Carbon\Carbon::parse($post->created_at)}} | @if($post->expire_at>$date_now)
                     {{__("post.expires_at")}} @else {{__("post.closed_at")}} @endif
-                    {{$post->expire_at->diffForHumans()}}
+                    {{\Carbon\Carbon::parse($post->expire_at)}}
                     {{-- <time_format timestamp="{{$post->created_at}}"></time_format> --}}
                     {{-- @if ($post->expire_at) --}}
                     {{-- | Expira a <time_format timestamp="{{$post->expire_at}}"></time_format> --}}
@@ -59,7 +59,7 @@
                     @if ( $post->user_id != auth()->user()->id)
                     <div class="w-100 text-right">
                         @if(auth()->user()->email_verified_at==null)
-                        
+
                         <a href="/email/verify" class="btn btn-sm btn-dark">{{__("post.answer")}}</a>
                         @else
                         <button onclick="window.loadThreadByParticipantChat({{$post->user_id}},{
